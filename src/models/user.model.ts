@@ -1,11 +1,11 @@
-import { DataTypes, Model } from 'sequelize';
-import sequelize from '../database';
+import { DataTypes, Model } from 'sequelize'
+import sequelize from '../database'
 
 class User extends Model {
-  public userId?: number;
-  public name!: string;
-  public email!: string;
-  public password!: string;
+  public userId?: number
+  public name!: string
+  public email!: string
+  public password!: string
 }
 
 User.init(
@@ -35,4 +35,4 @@ User.init(
   }
 );
 
-export default User;
+export default User
