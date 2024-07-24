@@ -49,16 +49,13 @@ router.post('/register', async (req, res) => {
       return res.status(401).json({ message: 'Senha incorreta' })
     }
   
-    const token = jwt.sign({ userId: user.userId }, 'your_jwt_secret', { expiresIn: '24h' })
+    const token = jwt.sign({ userId: user.userId, name: user.name }, 'your_jwt_secret', { expiresIn: '24h' })
   
     res.status(200).json({ message: 'Login bem-sucedido', token })
   })
 
   
 
-  router.post('/logout', (req: Request, res: Response) => {
-    res.status(200).json({ message: 'Logout bem-sucedido' })
-  })
 
 
   export default router
