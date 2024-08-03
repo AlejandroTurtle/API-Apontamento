@@ -7,6 +7,8 @@ import cors from 'cors'
 
 const app = express()
 
+const port = process.env.port || 5000
+
 
 
 app.use(bodyParser.json())
@@ -16,7 +18,7 @@ app.use("/api", authroutes, routeApontamento)
 const startServer = async () => {
     try {
       await sequelize.sync();
-      app.listen(5000, () => {
+      app.listen(port, () => {
         console.log('Servidor rodando na porta 5000')
       })
     } catch (error) {
