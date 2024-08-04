@@ -3,6 +3,9 @@
 import { DataTypes, Model } from 'sequelize'
 import sequelize from '../database'
 import User from './user.model'
+
+
+
 class Apontamento extends Model {
   public id_apontamento?: number
   public userId?: number
