@@ -7,7 +7,7 @@ import cors from 'cors'
 
 const app = express()
 
-const port = process.env.port || 5000
+const port = process.env.PORT || 5000
 
 
 
@@ -19,7 +19,7 @@ const startServer = async () => {
     try {
       await sequelize.sync();
       app.listen(port, () => {
-        console.log('Servidor rodando na porta 5000')
+        console.log(`Servidor rodando na porta ${port}`)
       })
     } catch (error) {
       console.error('Erro ao iniciar o servidor:', error)
