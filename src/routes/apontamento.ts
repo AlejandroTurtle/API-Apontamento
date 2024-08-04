@@ -90,4 +90,9 @@ declare module 'express-serve-static-core' {
     }
 });
 
+
+routeApontamento.get("/oi", (req: Request, res: Response) => {
+    res.json({ message: "Oi" })
+})
+
 export default routeApontamento
