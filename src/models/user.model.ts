@@ -1,17 +1,17 @@
-import { DataTypes, Model } from 'sequelize'
-import sequelize from '../database'
+import { DataTypes, Model } from 'sequelize';
+import sequelize from '../database';
 
 class User extends Model {
-  public userId?: number
-  public name!: string
-  public email!: string
-  public password!: string
+  public userId?: number;
+  public name!: string;
+  public email!: string;
+  public password!: string;
 }
 
 User.init(
   {
     userId: {
-      type: DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER,  // Remover UNSIGNED
       autoIncrement: true,
       primaryKey: true,
     },
@@ -35,4 +35,4 @@ User.init(
   }
 );
 
-export default User
+export default User;

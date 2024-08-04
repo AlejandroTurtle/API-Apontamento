@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize';
 
 const sequelize = new Sequelize(
-  process.env.DB_NAME ?? 'sistemaapontamento', // Nome do banco de dados
+  process.env.DB_NAME ?? 'qakijygm', // Nome do banco de dados
   process.env.DB_USER ?? 'qakijygm', // Nome de usuário
   process.env.DB_PASSWORD ?? 'vmvB5wc3T_QUmW_4wL7zQBI5COPY5-P2', // Senha
   {
