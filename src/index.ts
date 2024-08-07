@@ -13,11 +13,11 @@ const port = process.env.PORT || 5000
 
 app.use(bodyParser.json())
 app.use(cors())
-app.use("/", routeApontamento)
+app.use("/", authroutes, routeApontamento)
 
 const startServer = async () => {
     try {
-      await sequelize.sync();
+      await sequelize.sync({force: false});
       app.listen(port, () => {
         console.log(`Servidor rodando na porta ${port}`)
       })

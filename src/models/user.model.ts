@@ -11,9 +11,10 @@ class User extends Model {
 User.init(
   {
     userId: {
-      type: DataTypes.INTEGER,  // Remover UNSIGNED
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
+      field: 'userid'
     },
     name: {
       type: DataTypes.STRING,
