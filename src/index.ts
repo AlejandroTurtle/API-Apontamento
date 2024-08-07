@@ -14,7 +14,7 @@ const port = process.env.PORT
 
 app.use(bodyParser.json())
 app.use(cors())
-app.use("/api", authroutes, routeApontamento)
+app.use("/", authroutes, routeApontamento)
 
 app.listen(port, () => console.log(`Server running on port ${port}`))
 
