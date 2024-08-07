@@ -17,7 +17,11 @@ app.get('/', (_req: Request, res: Response) => {
     return res.send('Express Typescript on Vercel')
   })
 
-app.use("/api", authroutes, routeApontamento)
+const apiRouter = express.Router()
+apiRouter.use(authroutes)
+apiRouter.use(routeApontamento)
+
+app.use("/api", apiRouter)
 
 app.listen(port, () => console.log(`Server running on port ${port}`))
 
