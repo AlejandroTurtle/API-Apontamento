@@ -2,12 +2,11 @@ import express from "express"
 import authroutes from './routes/auth'
 import routeApontamento from './routes/apontamento'
 import bodyParser from "body-parser"
-import sequelize from './database'
 import cors from 'cors'
 
 const app = express()
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT
 
 
 
@@ -17,7 +16,6 @@ app.use("/", authroutes, routeApontamento)
 
 const startServer = async () => {
     try {
-      await sequelize.sync({force: false});
       app.listen(port, () => {
         console.log(`Servidor rodando na porta ${port}`)
       })

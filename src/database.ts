@@ -1,22 +1,21 @@
 import { Sequelize } from 'sequelize';
+import * as dotenv from 'dotenv';
 
-const sequelize = new Sequelize(
-  "postgres://default:8TM9CkqFOxNv@ep-round-fog-a4z1o5es-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require",
-  {
-    dialect: 'postgres',
-    define: {
-      timestamps: false
-    },
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false // Pode ser necessário em alguns casos
-      }
+dotenv.config(); // Carrega variáveis do arquivo .env
+
+console.log('Database URL:', process.env.POSTGRES_URL); // Verifica se a variável está carregada
+
+const sequelize = new Sequelize(process.env.POSTGRES_URL as string, {
+  dialect: 'postgres',
+  define: {
+    timestamps: false
+  },
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false // Pode ser necessário em alguns casos
     }
   }
-);
-
+});
 
 export default sequelize;
-
-
