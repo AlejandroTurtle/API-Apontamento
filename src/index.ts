@@ -1,4 +1,4 @@
-import express from "express"
+import express , { Request, Response } from "express"
 import authroutes from './routes/auth'
 import routeApontamento from './routes/apontamento'
 
@@ -13,7 +13,9 @@ const port = process.env.PORT
 
 
 
-app.use("/", authroutes, routeApontamento)
+app.get('/', (_req: Request, res: Response) => {
+    return res.send('Express Typescript on Vercel')
+  })
 
 app.listen(port, () => console.log(`Server running on port ${port}`))
 
