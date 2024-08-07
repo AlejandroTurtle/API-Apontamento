@@ -12,11 +12,6 @@ declare module 'express-serve-static-core' {
   }
 
 
-  routeApontamento.get("/", (req: Request, res: Response) => {
-    res.json({ message: "Bem-vindo à API de Apontamento!" });
-});
-
-
   routeApontamento.post("/apontamento", authenticateToken, async (req, res) => {
     const { data, entrada, saida, atividade } = req.body;
 

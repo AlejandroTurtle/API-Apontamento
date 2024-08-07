@@ -11,6 +11,6 @@ const port = process.env.PORT;
 app.get('/', (_req, res) => {
     return res.send('Express Typescript on Vercel');
 });
-app.use("/", auth_1.default, apontamento_1.default);
+app.use("/api", auth_1.default, apontamento_1.default);
 app.listen(port, () => console.log(`Server running on port ${port}`));
 //# sourceMappingURL=index.js.map

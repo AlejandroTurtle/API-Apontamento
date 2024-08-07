@@ -16,9 +16,6 @@ const express_1 = __importDefault(require("express"));
 const apontamento_model_1 = __importDefault(require("../models/apontamento.model"));
 const authenticateToken_1 = __importDefault(require("../middleware/authenticateToken"));
 const routeApontamento = express_1.default.Router();
-routeApontamento.get("/", (req, res) => {
-    res.json({ message: "Bem-vindo à API de Apontamento!" });
-});
 routeApontamento.post("/apontamento", authenticateToken_1.default, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { data, entrada, saida, atividade } = req.body;
     try {
