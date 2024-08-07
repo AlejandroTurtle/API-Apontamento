@@ -6,10 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const auth_1 = __importDefault(require("./routes/auth"));
 const apontamento_1 = __importDefault(require("./routes/apontamento"));
-const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
 const port = process.env.PORT;
-app.use((0, cors_1.default)());
 app.use("/", auth_1.default, apontamento_1.default);
 app.listen(port, () => console.log(`Server running on port ${port}`));
 //# sourceMappingURL=index.js.map
