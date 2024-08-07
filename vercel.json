@@ -1,16 +1,21 @@
 {
   "version": 2,
   "builds": [
-      {
-          "src": "dist/index.js",
-          "use": "@vercel/node",
-          "config": { "includeFiles": ["dist/**"] }
+    {
+      "src": "dist/index.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["dist/**", "node_modules/**"],
+        "env": {
+          "DATABASE_URL": "postgres://default:8TM9CkqFOxNv@ep-round-fog-a4z1o5es-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
+        }
       }
+    }
   ],
   "routes": [
-      {
-          "src": "/(.*)",
-          "dest": "dist/index.js"
-      }
+    {
+      "src": "/(.*)",
+      "dest": "dist/index.js"
+    }
   ]
 }
